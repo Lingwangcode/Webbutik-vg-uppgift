@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body onload="order()">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">My Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-form.html">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div style="float: right;">
+      <button id ="clear-btn" class ="btn, btn-danger">Clear all products</button>
+    </div>
+  </header>
+
+    <h1 class="text-center">Skapa order</h1>
+
+    <div class="container">
+
+      <div class="row justify-content-center align-items-center">
+        <!--productimage-->
+        
+
+          <div id ="pro" class="card-deck d-flex flex-wrap"></div>
+
+          <div>
+            <hr>
+            <div id="total-price" class="ms-2"></div>
+            <hr>
+          </div>
+    
+        <form action="confirmation.html" id="contact-form">
+            <!-- namn input -->
+            <div class="mb-3 px-3"> 
+                <label for="nameInput" class="form-label">Namn</label>
+                <input type="text" class="form-control" id="nameInput" placeholder=" Exempel Exempelson" onkeyup="validateName()">
+                <span id="name-error" class="text-danger"></span> 
+               
+              </div>
+              <!-- telefon input -->
+              <div class="mb-3 px-3">
+                <label for="phoneInput" class="form-label">Telefon</label>
+                <input type="tel" class="form-control" id="phoneInput" placeholder="123 456 7890" onkeyup="validatePhone()">
+                <span id="phone-error" class="text-danger"></span> 
+            
+              </div>
+              <!-- email input -->
+              <div class="mb-3 px-3">
+                <label for="emailInput" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Exempel@gmail.com" onkeyup="validateEmail()">
+                <span id="email-error" class="text-danger"></span> 
+             
+              </div>
+              <!-- adress input -->
+              <div class="mb-3 px-3">
+                <label for="addressInput" class="form-label">Adress</label>
+                <input type="text" class="form-control" id="addressInput" placeholder="Exempelvägen 1" onkeyup="validateAddress()">
+                <span id="address-error" class="text-danger"></span> 
+            
+              </div>
+              <!-- postnummer input -->
+              <div class="mb-3 px-3">
+                <label for="zipInput" class="form-label">Postnummer</label>
+                <input type="text" class="form-control" id="zipInput" placeholder="123 45" onkeyup="validateZip()">
+                <span id="zip-error" class="text-danger"></span>  
+    
+              </div>
+              <!-- ort input -->
+              <div class="mb-3 px-3">
+                <label for="regionInput" class="form-label">Ort</label>
+                <input type="text" class="form-control" id="regionInput" placeholder="Exempelby" onkeyup="validateRegion()">
+                <span id="region-error" class="text-danger"></span> 
+              
+              </div>
+              <div class="text-center">
+                <!-- submit knapp -->
+            
+              <button type="button" id="submitButton" class="btn btn-lg btn-primary px-4" onclick="validateAll()">Färdigställ Order</button>
+              <span id="submit-error" class="text-danger"></span>
+              
+            </div>
+        </form>
+      </div>
+
+    </div>
+
+<script src="Javascript.js"></script>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
