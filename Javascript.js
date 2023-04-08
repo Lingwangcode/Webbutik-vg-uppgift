@@ -36,8 +36,7 @@ function catalog() {
                       sum: 1
                   };
                   
-                  products.push(product);
-                  console.log(products)
+                  products.push(product);                
                   localStorage.setItem("products", JSON.stringify(products));
               
                 }
@@ -46,7 +45,6 @@ function catalog() {
 
             });
          
-           
           })
         .catch(error => {
             console.error("Error fetching products:", error);
@@ -54,7 +52,7 @@ function catalog() {
 }
 
 function order() {
-  let totalPrice = 0;
+
   const element = document.getElementById("pro");
 
   const form = document.getElementById("contact-form")
@@ -77,8 +75,7 @@ function order() {
                       <button class="btn btn-sm btn-primary plus">+</button>              
                     </div>
                   </div>`;
-                  
-                  
+
                 if(element){
                   element.appendChild(inneElement)
                 }
@@ -150,7 +147,6 @@ function updateProductPrice(cart, index){
   const productPrice = cart[index].price;
   const count = cart[index].sum;
   const newPrice ="$" + (parseFloat(productPrice.slice(1)) * count);
-  console.log(newPrice);
   const priceElement = document.querySelectorAll(".product-price");
   priceElement.forEach((priceEl, i) => {
     if(i===index){
@@ -198,7 +194,6 @@ function confirmation() {
 
 function updateTotalPrice(cart){
 
-  console.log(cart)
     let totalPrice = 0;
     if(cart){
 
